@@ -27,3 +27,7 @@ def merge_sort(A):
 
 A=[8,48,582,3,5,2,1]
 print(merge_sort(A))
+
+
+print(0<5)
+print(6>12)

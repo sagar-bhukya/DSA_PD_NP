@@ -61,7 +61,7 @@ print('make that in 2-D format ex:a[][]\n',d2d)
 #----------------------------------------------------------------------#
 print('loc[]. stop value is included and column access by their name itself-------------')
 print('1.df[row_number]')
-dr=dfr.loc[2]
+dr=dfr.loc[4]
 print('loc[2]->fetch only 2 row of all columns data\n',dr)
 
 
@@ -80,7 +80,7 @@ print('0to4 values\n',dl1)
 
 print('5.df.loc[start:stop,"column_name"]')
 dcn=dfr.loc[0:5,'Name_of_Student']
-print('on;y column data of those row will display\n',dcn)
+print('only column data of those row will display\n',dcn)
 print('for two columns gives ->[]')
 dcn1=dfr.loc[0:5,["Name_of_Student",'English']]
 print('2 columns of data will print\n',dcn1)
@@ -162,22 +162,24 @@ print('for descending order\n',s2)
 
 #manipulating Dataframes--------------------------------------------
 print('Adding ----------')
-#unique column names not support if we give updated with latest column name
-# print("df['new_column']=defaultvalue")
-# dfr["Total"]=0
-# print('new column Total with deafult value=0 added at end of Dataframe\n',dfr)
-# print('dfr[new_column]=expression/condition')
-# dfr['Total']=dfr['Maths']+dfr['Telugu']+dfr['English']+dfr['Science']+dfr['Social']
-# print('addition of all subject of marks\n',dfr)
+# unique column names not support if we give updated with latest column name
+print("df['new_column']=defaultvalue")
+dfr["Total"]=0
+print('new column Total with deafult value=0 added at end of Dataframe\n',dfr)
+print('dfr[new_column]=expression/condition')
+dfr['Total']=dfr['Maths']+dfr['Telugu']+dfr['English']+dfr['Science']+dfr['Social']
+print('addition of all subject of marks\n',dfr)
 
 #get all column names 
 print('get all column names')
-column_names = dfr.head(0).columns.tolist()
-print('column names\n',column_names)
+# column_names = dfr.head(0).columns.tolist()
+colum_names=dfr.columns.tolist()
+print('column names\n',colum_names)
 
 #get except roll_no and Name_of_Student column
 print("get except roll_no and Name_of_Student column")
-# column_except=[col for col in dfr.columns if col not in ['Roll_No', 'Name_of_Student']]
+column_except=[col for col in dfr.columns if col not in ['Roll_No', 'Name_of_Student']]
+print("except columns\n",column_except)
 # Select only numeric columns (excluding 'Roll_No' and 'Name_of_Student')
 numeric_columns = [col for col in dfr.columns if col not in ['Roll_No', 'Name_of_Student'] and pd.api.types.is_numeric_dtype(dfr[col])]  # Check for numeric data type
 #to crate new column and add a expression to that
