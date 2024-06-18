@@ -223,7 +223,7 @@ print(dpt)
 # Find duplicate values (excluding the first occurrence)
 # duplicates = dfr[dfr["Name_of_Student"].duplicated(keep='first')]
 duplicat=dfr["Name_of_Student"].duplicated(keep='first')
-print(duplicat)#gives boolean values
+print(duplicat)#gives boolean values    
 duplicates=dfr[duplicat]# returns only True valus
 print("dup\n",duplicates)
 #know duplicates in a column 
@@ -267,5 +267,5 @@ print("df.to_csv(path) with index")
 dfr.to_csv('with_csv_index.csv')
 print("df.to_csv(path),index=False->without indexing")
 dfr.to_csv('without_index_csv.csv',index=False)
-
+dfr.to_json("df.json")
 
